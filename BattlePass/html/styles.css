@@ -1,0 +1,428 @@
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+
+@keyframes logo_rot {
+	0% {
+		transform: rotate(0deg)
+	}
+	50% {
+		transform: rotate(10deg)
+	}
+	100% {
+		transform: rotate(0deg)
+	}
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.575);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.658);
+}
+
+* {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+html {
+  overflow: hidden;
+  font-family: monospace;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.full-screen {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.container {
+  width: 1200px;
+  height: 600px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+  background-image: url("https://cdn.discordapp.com/attachments/814140915672154132/887676604841611365/pc_background.png"); /* تغيير خلفية المنيو */
+  color: #4242427c;
+	border-radius: 5px;
+	display: none;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.btnClose {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: 40px;
+  height: 40px;
+  color: #ffffff7c;
+  background-color: transparent;
+  outline: none;
+  border: none;
+}
+
+.btnClose:hover {
+  color: #ffffffcc;
+}
+
+.title {
+  position: absolute;
+  left: 515px;
+  top: 78px;
+  margin: 0;
+  display: inline-block;
+	font-size: 35px;
+	line-height: 50px;
+	color: #fff;
+	background-color: rgba(22, 22, 22, 0);
+	border-radius: 5px;
+	padding: 5px 5px 3px 5px;
+}
+
+h1 {
+  font-family: 'Josefin Sans', sans-serif;
+  color: var(--primary-color);
+}
+
+p {
+  font-size: 16px;
+  margin: 0 0 5px 0;
+  padding: 0;
+}
+
+
+.logo {
+	position: absolute;
+	top: -75px;
+  left: -50px;
+  -webkit-transform:rotate(-15deg);
+  -moz-transform: rotate(-15deg);
+  -ms-transform: rotate(-15deg);
+  -o-transform: rotate(-15deg);
+  transform: rotate(-15deg);
+}
+
+.logo img {
+	width: 150px;
+	opacity: 1;
+	transition: 0.2s all;
+}
+
+.logo img:hover {
+	animation: logo_rot 1s linear infinite;
+}
+
+.scrollbox {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  width: 1100px;
+  height: 470px;
+}
+
+#showTiers, #TierSelection {
+  display: none;
+  margin: 0;
+  padding: 0;
+  width: 1100px;
+  height: 500px;
+  margin-top: 70px;
+  margin-left: 50px;
+}
+
+#showTiers h5 {
+  font-weight: normal;
+  font-size: 12px;
+  margin-left:  80.5%;
+}
+
+.Tiers-list div {
+  background: linear-gradient(110deg, #1b2530 20%, #56595c 80%); /* لتغيير لون مربع التير */
+  border-radius: 5px;
+  width: 30.3%;
+  margin: 10px 1.5%;
+  height: 150px;
+}
+
+@keyframes mymove {
+  from {background-color: red;}
+  to {background-color: blue;}
+}
+
+.Tiers-list div h3 {
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: normal;
+  padding: 0 15px;
+  color: #020927; /* لتغير لون اسم التير */
+  font-size: 25px;
+  font-family: Fantasy;
+}
+
+
+.GetTier {
+  border-radius: 7px;
+  background: linear-gradient(-30deg, #0D1C2A 20%, #13202c 80%); /* الوان زر التير */
+  cursor: pointer;
+  padding: 12px 20px;
+  margin-left: 25%;
+  display: inline-block;
+  -webkit-transform: translate(0%, 0%);
+          transform: translate(0%, 0%);
+  overflow: hidden;
+  color: #ffffffc2; /* لتغير لون خط التير */
+  font-size: 20px;
+  letter-spacing: 2.5px;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  -webkit-box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.GetTier::before {
+  content: '';
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 0, 0);
+  opacity: 0;
+  -webkit-transition: .2s opacity ease-in-out;
+  transition: .2s opacity ease-in-out;
+}
+
+.GetTier:hover::before {
+  opacity: 0.2;
+}
+
+.GetTier span {
+  position: absolute;
+}
+
+.GetTier span:nth-child(1) {
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 2px;
+  background: -webkit-gradient(linear, right top, left top, from(rgba(43, 8, 8, 0)), to(#acacacbe));
+  background: linear-gradient(to left, rgba(43, 8, 8, 0), #acacacbe);
+  -webkit-animation: 2s animateTop linear infinite;
+          animation: 2s animateTop linear infinite;
+}
+
+@keyframes animateTop {
+  0% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+  100% {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+}
+
+.GetTier span:nth-child(2) {
+  top: 0px;
+  right: 0px;
+  height: 100%;
+  width: 2px;
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(43, 8, 8, 0)), to(#acacacbe));
+  background: linear-gradient(to top, rgba(43, 8, 8, 0), #acacacbe);
+  -webkit-animation: 2s animateRight linear -1s infinite;
+          animation: 2s animateRight linear -1s infinite;
+}
+
+@keyframes animateRight {
+  0% {
+    -webkit-transform: translateY(100%);
+            transform: translateY(100%);
+  }
+  100% {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+}
+
+.GetTier span:nth-child(3) {
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  height: 2px;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(43, 8, 8, 0)), to(#acacacbe));
+  background: linear-gradient(to right, rgba(43, 8, 8, 0), #acacacbe);
+  -webkit-animation: 2s animateBottom linear infinite;
+          animation: 2s animateBottom linear infinite;
+}
+
+@keyframes animateBottom {
+  0% {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+  100% {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+}
+
+.GetTier span:nth-child(4) {
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 2px;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(43, 8, 8, 0)), to(#acacacbe));
+  background: linear-gradient(to bottom, rgba(43, 8, 8, 0), #acacacbe);
+  -webkit-animation: 2s animateLeft linear -1s infinite;
+          animation: 2s animateLeft linear -1s infinite;
+}
+
+
+.Tiers-list div p {
+  font-weight: normal;
+  padding: 0 15px;
+  color: #071024; /* لتغير لون رقم التير في اسفل المربع */
+  margin-left: -3%;
+  padding: -25px;
+  font-size: 17px;
+  font-family: Fantasy;
+  animation: slide-bck-tr 0.0s cubic-bezier(0.0, 0.000, 0.0, 0.0) both;
+}
+
+@-webkit-keyframes slide-bck-tr {
+	0% {
+		-webkit-transform: translateZ(0) translateY(0) translateX(0);
+		transform: translateZ(0) translateY(0) translateX(0);
+	}
+	100% {
+		-webkit-transform: translateZ(-0px) translateY(-70px) translateX(0px);
+		transform: translateZ(-0px) translateY(-25px) translateX(0px);
+	}
+}
+
+.TierHeader {
+  margin-bottom: 20px;
+}
+
+.TierTitle {
+  height: 50px;
+  line-height: 50px;
+  text-transform: uppercase;
+  font-weight: normal;
+  margin: 0 0 0 10px;
+  padding: 0;
+}
+
+.TierIcon {
+  height: 50px;
+  width: 50px;
+}
+
+.TierButtons {
+  margin-top: 40px;
+}
+
+.TierButtons button {
+  border: none;
+  outline: none;
+  padding: 15px 25px;
+  font-size: 16px;
+  background-color: var(--primary-color);
+  color: #FFFFFF;
+}
+
+.TierButtons button:hover {
+  background-color: var(--secondary-color);
+}
+
+.TierButtons button:disabled {
+  background-color: #414141;
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300&display=swap');
+
+
+
+.template, .notification {
+    display: none;
+}
+
+@keyframes bounceIn {
+    0% {
+      transform: scale(0.1);
+      opacity: 0;
+    }
+    60% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+.notif-container {
+    width: 20vw;
+    position: absolute;
+    top: 4vh;
+    right: 12vw;
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+}
+
+.notification {
+    position: relative;
+    padding: 1vh;
+    width: fit-content;
+    border-radius: .4vh;
+    margin: 5px;
+    font-family: 'Tajawal', sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    float: left;
+}
+
+.success {
+    background: #27ae60;
+    color: #fff;
+    animation: bounceIn 0.8s;
+}
+
+.primary {
+    background-color: #2980b9;
+    color: #ffffff;
+    animation: bounceIn 0.8s;
+
+} 
+
+.error {
+    background: #c0392b;
+    color: #fff;
+    animation: bounceIn 0.8s;
+}
+  
